@@ -1,0 +1,6 @@
+{
+  "name": "Aura Skin & Dermatology Clinic",
+  "description": "Premium, modern private dermatology and skin clinic website built for Axiom Syndicate.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
