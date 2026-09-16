@@ -72,10 +72,51 @@ export const Services: React.FC<ServicesProps> = ({ clinic, onSelectService }) =
         </div>
 
         {/* Interactive Treatment Explorer: High contrast split layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           
-          {/* Left: Service Selection List */}
-          <div className="lg:col-span-5 space-y-3">
+          {/* Mobile Horizontal Swipeable Tabs (lg:hidden) */}
+          <div className="lg:hidden flex overflow-x-auto scrollbar-none space-x-2.5 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+            {services.map((service, index) => {
+              const Icon = getServiceIcon(service.iconName);
+              const isSelected = service.id === activeService.id;
+
+              return (
+                <button
+                  key={service.id || index}
+                  onClick={() => {
+                    setSelectedServiceId(service.id);
+                    setTimeout(() => {
+                      const card = document.getElementById('service-detail-card');
+                      if (card) {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                      }
+                    }, 50);
+                  }}
+                  className={`shrink-0 px-4 py-3 rounded-xl border text-left transition-all duration-200 flex items-center space-x-2.5 cursor-pointer min-h-[44px] ${
+                    isSelected
+                      ? 'bg-white border-[#7C9885] shadow-xs text-[#1A1A1A]'
+                      : 'bg-white/70 border-[#E5E2DD] text-[#5C5C5C]'
+                  }`}
+                >
+                  <div
+                    className={`p-1.5 rounded-lg text-xs ${
+                      isSelected
+                        ? 'bg-[#7C9885] text-white'
+                        : 'bg-[#FAF9F7] text-[#7C9885] border border-[#E5E2DD]'
+                    }`}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                  </div>
+                  <span className={`text-xs font-semibold whitespace-nowrap ${isSelected ? 'text-[#1A1A1A]' : 'text-[#5C5C5C]'}`}>
+                    {service.name}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Desktop Left: Service Selection List (hidden lg:block) */}
+          <div className="hidden lg:block lg:col-span-5 space-y-3">
             {services.map((service, index) => {
               const Icon = getServiceIcon(service.iconName);
               const isSelected = service.id === activeService.id;
@@ -127,8 +168,8 @@ export const Services: React.FC<ServicesProps> = ({ clinic, onSelectService }) =
           </div>
 
           {/* Right: Detailed Treatment Focus Card */}
-          <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl border border-[#E5E2DD] p-6 sm:p-10 shadow-xs relative overflow-hidden transition-all duration-300">
+          <div className="lg:col-span-7" id="service-detail-card">
+            <div className="bg-white rounded-3xl border border-[#E5E2DD] p-5 sm:p-10 shadow-xs relative overflow-hidden transition-all duration-300">
               
               {/* Top accent bar */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-[#7C9885]" />

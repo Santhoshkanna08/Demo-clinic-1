@@ -83,7 +83,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF9F7] text-[#1A1A1A] pb-16 sm:pb-0">
+    <div className="min-h-screen flex flex-col bg-[#FAF9F7] text-[#1A1A1A] pb-[76px] sm:pb-0">
       {/* Sticky Header */}
       <Header
         clinic={clinic}

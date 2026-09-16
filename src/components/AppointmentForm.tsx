@@ -175,7 +175,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           
           {/* Main Form Box */}
-          <div className="lg:col-span-8 bg-[#FAF9F7] rounded-3xl border border-[#E5E2DD] p-6 sm:p-10 shadow-xs">
+          <div className="lg:col-span-8 bg-[#FAF9F7] rounded-3xl border border-[#E5E2DD] p-5 sm:p-10 shadow-xs">
             
             {/* Live Endpoint Success State */}
             {liveSubmitted ? (
@@ -227,7 +227,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                       href={preparedRequest.whatsappUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 flex items-center justify-center space-x-2 py-4 px-6 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs uppercase tracking-widest font-semibold rounded-full transition-colors shadow-xs"
+                      className="flex-1 flex items-center justify-center space-x-2 py-4 px-6 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs uppercase tracking-widest font-semibold rounded-full transition-colors shadow-xs min-h-[48px]"
                     >
                       <WhatsAppIcon className="w-4 h-4" variant="white-bubble" />
                       <span>Send Enquiry via WhatsApp</span>
@@ -237,7 +237,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                   {hasPhone && (
                     <a
                       href={`tel:${clinic.contact?.phone?.replace(/[^0-9+]/g, '')}`}
-                      className="flex-1 flex items-center justify-center space-x-2 py-4 px-6 bg-[#1A1A1A] hover:bg-[#7C9885] text-white text-xs uppercase tracking-widest font-semibold rounded-full transition-colors shadow-xs"
+                      className="flex-1 flex items-center justify-center space-x-2 py-4 px-6 bg-[#1A1A1A] hover:bg-[#7C9885] text-white text-xs uppercase tracking-widest font-semibold rounded-full transition-colors shadow-xs min-h-[48px]"
                     >
                       <Phone className="w-4 h-4" />
                       <span>Call Reception Now</span>
@@ -286,7 +286,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                   
                   {/* Full Name */}
                   <div>
@@ -304,11 +304,11 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                           if (errors.fullName) setErrors(prev => ({ ...prev, fullName: '' }));
                         }}
                         placeholder="e.g., Sarah Jenkins"
-                        className={`w-full px-4 py-3 bg-white rounded-xl border text-sm text-[#1A1A1A] placeholder-[#5C5C5C]/50 focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all ${
+                        className={`w-full px-4 py-3 bg-white rounded-xl border text-base sm:text-sm text-[#1A1A1A] placeholder-[#5C5C5C]/50 focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all min-h-[48px] sm:min-h-[44px] ${
                           errors.fullName ? 'border-red-500' : 'border-[#E5E2DD]'
                         }`}
                       />
-                      <User className="w-4 h-4 text-[#5C5C5C] absolute right-3.5 top-3.5 pointer-events-none" />
+                      <User className="w-4 h-4 text-[#5C5C5C] absolute right-3.5 top-4 sm:top-3.5 pointer-events-none" />
                     </div>
                     {errors.fullName && (
                       <p className="text-[11px] text-red-600 mt-1">{errors.fullName}</p>
@@ -331,11 +331,11 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                           if (errors.phone) setErrors(prev => ({ ...prev, phone: '' }));
                         }}
                         placeholder="e.g., +1 (415) 555-0192"
-                        className={`w-full px-4 py-3 bg-white rounded-xl border text-sm text-[#1A1A1A] placeholder-[#5C5C5C]/50 focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all ${
+                        className={`w-full px-4 py-3 bg-white rounded-xl border text-base sm:text-sm text-[#1A1A1A] placeholder-[#5C5C5C]/50 focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all min-h-[48px] sm:min-h-[44px] ${
                           errors.phone ? 'border-red-500' : 'border-[#E5E2DD]'
                         }`}
                       />
-                      <Phone className="w-4 h-4 text-[#5C5C5C] absolute right-3.5 top-3.5 pointer-events-none" />
+                      <Phone className="w-4 h-4 text-[#5C5C5C] absolute right-3.5 top-4 sm:top-3.5 pointer-events-none" />
                     </div>
                     {errors.phone && (
                       <p className="text-[11px] text-red-600 mt-1">{errors.phone}</p>
@@ -344,7 +344,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
 
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                   
                   {/* Preferred Date */}
                   <div>
@@ -362,7 +362,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                           setPreferredDate(e.target.value);
                           if (errors.preferredDate) setErrors(prev => ({ ...prev, preferredDate: '' }));
                         }}
-                        className={`w-full px-4 py-3 bg-white rounded-xl border text-sm text-[#1A1A1A] focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all ${
+                        className={`w-full px-4 py-3 bg-white rounded-xl border text-base sm:text-sm text-[#1A1A1A] focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all min-h-[48px] sm:min-h-[44px] ${
                           errors.preferredDate ? 'border-red-500' : 'border-[#E5E2DD]'
                         }`}
                       />
@@ -381,7 +381,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                       id="preferredTime"
                       value={preferredTime}
                       onChange={(e) => setPreferredTime(e.target.value)}
-                      className="w-full px-4 py-3 bg-white rounded-xl border border-[#E5E2DD] text-sm text-[#1A1A1A] focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all"
+                      className="w-full px-4 py-3 bg-white rounded-xl border border-[#E5E2DD] text-base sm:text-sm text-[#1A1A1A] focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all min-h-[48px] sm:min-h-[44px]"
                     >
                       <option value="Morning (8:30 AM – 12:00 PM)">Morning (8:30 AM – 12:00 PM)</option>
                       <option value="Afternoon (12:00 PM – 5:00 PM)">Afternoon (12:00 PM – 5:00 PM)</option>
@@ -400,7 +400,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                     id="service"
                     value={service}
                     onChange={(e) => setService(e.target.value)}
-                    className="w-full px-4 py-3 bg-white rounded-xl border border-[#E5E2DD] text-sm text-[#1A1A1A] focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all"
+                    className="w-full px-4 py-3 bg-white rounded-xl border border-[#E5E2DD] text-base sm:text-sm text-[#1A1A1A] focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all min-h-[48px] sm:min-h-[44px]"
                   >
                     {clinic.services && clinic.services.length > 0 ? (
                       clinic.services.map(s => (
@@ -425,7 +425,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Provide any timing preferences or questions regarding your initial consultation..."
-                    className="w-full px-4 py-3 bg-white rounded-xl border border-[#E5E2DD] text-sm text-[#1A1A1A] placeholder-[#5C5C5C]/50 focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all"
+                    className="w-full px-4 py-3 bg-white rounded-xl border border-[#E5E2DD] text-base sm:text-sm text-[#1A1A1A] placeholder-[#5C5C5C]/50 focus:outline-hidden focus:ring-2 focus:ring-[#7C9885] transition-all"
                   />
                   <p className="text-[11px] text-[#5C5C5C] mt-1.5">
                     For patient privacy, please do not include confidential diagnostic history or sensitive medical records in web form submissions.

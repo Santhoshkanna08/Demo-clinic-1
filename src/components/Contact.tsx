@@ -148,7 +148,7 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
 
           {/* Right Card: Directions & Quick Interactive Action Box */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="bg-white rounded-3xl border border-[#E5E2DD] p-7 sm:p-8 shadow-xs flex-1 flex flex-col justify-between">
+            <div className="bg-white rounded-3xl border border-[#E5E2DD] p-5 sm:p-8 shadow-xs flex-1 flex flex-col justify-between">
               
               <div className="space-y-6">
                 <div>
@@ -168,7 +168,7 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
                   {hasPhone && (
                     <a
                       href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`}
-                      className="w-full flex items-center justify-center space-x-2.5 py-4 bg-[#1A1A1A] hover:bg-[#7C9885] text-white text-xs uppercase tracking-widest font-semibold rounded-full transition-colors shadow-xs"
+                      className="w-full flex items-center justify-center space-x-2.5 py-3.5 bg-[#1A1A1A] hover:bg-[#7C9885] text-white text-xs uppercase tracking-widest font-semibold rounded-full transition-colors shadow-xs min-h-[48px]"
                     >
                       <Phone className="w-4 h-4" />
                       <span>Call Clinic: {contact.phone}</span>
@@ -180,7 +180,7 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
                       href={contact.googleMapsUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full flex items-center justify-center space-x-2.5 py-3.5 bg-white hover:bg-[#FAF9F7] text-[#1A1A1A] border border-[#E5E2DD] hover:border-[#7C9885] text-xs uppercase tracking-widest font-semibold rounded-full transition-colors"
+                      className="w-full flex items-center justify-center space-x-2.5 py-3.5 bg-white hover:bg-[#FAF9F7] text-[#1A1A1A] border border-[#E5E2DD] hover:border-[#7C9885] text-xs uppercase tracking-widest font-semibold rounded-full transition-colors min-h-[48px]"
                     >
                       <Navigation className="w-4 h-4 text-[#7C9885]" />
                       <span>Get Directions</span>
@@ -193,7 +193,7 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
                       href={`https://wa.me/${cleanWhatsAppNumber}?text=${encodedWhatsAppMsg}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full flex items-center justify-center space-x-2.5 py-3.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] border border-[#25D366]/30 text-xs uppercase tracking-widest font-semibold rounded-full transition-colors"
+                      className="w-full flex items-center justify-center space-x-2.5 py-3.5 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] border border-[#25D366]/30 text-xs uppercase tracking-widest font-semibold rounded-full transition-colors min-h-[48px]"
                     >
                       <WhatsAppIcon className="w-4 h-4" variant="green-badge" />
                       <span>WhatsApp Reception</span>

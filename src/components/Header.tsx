@@ -19,6 +19,17 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { label: 'Home', href: '#hero', show: true },
     { label: 'About', href: '#about', show: true },
@@ -43,8 +54,8 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
       id="main-header"
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#FAF9F7]/95 backdrop-blur-md shadow-xs border-b border-[#E5E2DD] py-3.5'
-          : 'bg-[#FAF9F7]/80 backdrop-blur-xs border-b border-transparent py-5'
+          ? 'bg-[#FAF9F7]/95 backdrop-blur-md shadow-xs border-b border-[#E5E2DD] py-2.5 sm:py-3.5'
+          : 'bg-[#FAF9F7]/90 backdrop-blur-xs border-b border-transparent py-3 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,13 +64,13 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="group flex flex-col focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#7C9885] rounded-sm"
+            className="group flex flex-col focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#7C9885] rounded-sm py-1"
           >
-            <span className="font-editorial text-2xl sm:text-3xl font-semibold tracking-tight text-[#1A1A1A] group-hover:text-[#7C9885] transition-colors">
+            <span className="font-editorial text-xl xs:text-2xl sm:text-3xl font-semibold tracking-tight text-[#1A1A1A] group-hover:text-[#7C9885] transition-colors leading-tight">
               {clinic.name}
             </span>
             {clinic.type && (
-              <span className="text-[11px] tracking-wider uppercase font-medium text-[#5C5C5C] -mt-1 hidden sm:block">
+              <span className="text-[10px] sm:text-[11px] tracking-wider uppercase font-medium text-[#5C5C5C] hidden sm:block">
                 {clinic.type}
               </span>
             )}
@@ -105,17 +116,17 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
           <div className="flex items-center space-x-2 lg:hidden">
             <button
               onClick={onBookClick}
-              className="sm:hidden px-3.5 py-2 bg-[#1A1A1A] text-white text-xs font-medium tracking-wide rounded-full cursor-pointer"
+              className="sm:hidden px-3 py-2 bg-[#1A1A1A] text-white text-xs font-medium tracking-wide rounded-full cursor-pointer active:bg-[#7C9885]"
             >
               Request
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 text-[#1A1A1A] hover:text-[#7C9885] rounded-md focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#7C9885] min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
+              className="p-2.5 text-[#1A1A1A] hover:text-[#7C9885] rounded-lg focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#7C9885] min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer bg-white/80 border border-[#E5E2DD]"
               aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -123,17 +134,18 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-[#FAF9F7] border-b border-[#E5E2DD] shadow-lg animate-in slide-in-from-top-2 duration-200">
-          <div className="max-w-7xl mx-auto px-6 py-6 space-y-4">
-            <nav className="flex flex-col space-y-3" aria-label="Mobile Navigation">
+        <div className="lg:hidden fixed inset-x-0 top-full bg-[#FAF9F7]/98 backdrop-blur-lg border-b border-[#E5E2DD] shadow-xl animate-in slide-in-from-top-2 duration-200 max-h-[82vh] overflow-y-auto">
+          <div className="max-w-7xl mx-auto px-6 py-6 space-y-5">
+            <nav className="flex flex-col space-y-1" aria-label="Mobile Navigation">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-base font-medium text-[#1A1A1A] hover:text-[#7C9885] py-2 border-b border-[#E5E2DD]/50"
+                  className="text-base font-medium text-[#1A1A1A] hover:text-[#7C9885] py-3 px-2 border-b border-[#E5E2DD]/40 flex items-center justify-between min-h-[48px] active:bg-[#E5E2DD]/20 rounded-lg"
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <ArrowRight className="w-4 h-4 text-[#7C9885]" />
                 </a>
               ))}
             </nav>
@@ -144,7 +156,7 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
                   setMobileMenuOpen(false);
                   onBookClick();
                 }}
-                className="w-full py-3.5 bg-[#1A1A1A] text-white text-xs uppercase tracking-widest font-semibold rounded-full flex items-center justify-center space-x-2 cursor-pointer"
+                className="w-full py-3.5 bg-[#1A1A1A] text-white text-xs uppercase tracking-widest font-semibold rounded-full flex items-center justify-center space-x-2 cursor-pointer active:bg-[#7C9885]"
               >
                 <span>Request Appointment</span>
                 <ArrowRight className="w-4 h-4" />
@@ -153,7 +165,7 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
               {clinic.contact.phone && (
                 <a
                   href={`tel:${clinic.contact.phone.replace(/[^0-9+]/g, '')}`}
-                  className="w-full py-3 bg-white border border-[#E5E2DD] text-[#1A1A1A] text-xs uppercase tracking-widest font-semibold rounded-full flex items-center justify-center space-x-2"
+                  className="w-full py-3 bg-white border border-[#E5E2DD] text-[#1A1A1A] text-xs uppercase tracking-widest font-semibold rounded-full flex items-center justify-center space-x-2 active:bg-[#FAF9F7]"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#7C9885]" />
                   <span>Call {clinic.contact.phone}</span>
