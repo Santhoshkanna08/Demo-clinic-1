@@ -94,11 +94,11 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({ clinic, onBookClic
                 <span>{doctor.title || 'Consultant Dermatologist'}</span>
               </div>
 
-              <h3 className="font-editorial text-2xl sm:text-4xl text-[#1A1A1A] font-normal tracking-tight">
+              <h3 className="font-editorial text-3xl sm:text-4xl text-[#1A1A1A] font-normal tracking-tight">
                 {doctor.name}
               </h3>
               
-              <p className="text-xs sm:text-sm font-medium text-[#5C5C5C] mt-1">
+              <p className="text-sm sm:text-base font-medium text-[#5C5C5C] mt-1">
                 {doctor.specialty}
               </p>
             </div>
@@ -110,7 +110,7 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({ clinic, onBookClic
                   <GraduationCap className="w-4 h-4 text-[#7C9885]" />
                   <span>Qualifications &amp; Credentials</span>
                 </div>
-                <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed font-normal">
+                <p className="text-sm text-[#5C5C5C] leading-relaxed font-normal">
                   {doctor.qualifications}
                 </p>
               </div>
@@ -118,13 +118,13 @@ export const DoctorProfile: React.FC<DoctorProfileProps> = ({ clinic, onBookClic
 
             {/* Bio / Philosophy - Rendered ONLY if provided */}
             {hasBio && (
-              <div className="space-y-3 text-xs sm:text-base text-[#5C5C5C] leading-relaxed">
+              <div className="space-y-3 text-sm sm:text-base text-[#5C5C5C] leading-relaxed">
                 <p>{doctor.bio}</p>
               </div>
             )}
 
             {/* Clinical Standards Checklist */}
-            <div className="pt-2 border-t border-[#E5E2DD] grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs text-[#5C5C5C]">
+            <div className="pt-2 border-t border-[#E5E2DD] grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 text-xs sm:text-sm text-[#5C5C5C]">
               <div className="flex items-center space-x-2">
                 <CheckCircle2 className="w-4 h-4 text-[#7C9885] shrink-0" />
                 <span>Individual diagnostic consultations</span>

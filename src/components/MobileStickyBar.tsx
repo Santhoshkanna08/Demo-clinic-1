@@ -37,7 +37,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ clinic, onBook
         {hasPhone && (
           <a
             href={`tel:${cleanPhone}`}
-            className="flex-1 min-h-[46px] flex items-center justify-center space-x-1.5 py-2.5 px-2 bg-[#FAF9F7] active:bg-[#E5E2DD] text-[#1A1A1A] border border-[#E5E2DD] rounded-xl text-[11px] xs:text-xs font-semibold tracking-wider uppercase transition-colors shrink-0"
+            className="flex-1 min-h-[46px] flex items-center justify-center space-x-1.5 py-2.5 px-2 bg-[#FAF9F7] active:bg-[#E5E2DD] text-[#1A1A1A] border border-[#E5E2DD] rounded-xl text-xs font-semibold tracking-wider uppercase transition-colors shrink-0"
             aria-label={`Call ${clinic.name}`}
           >
             <Phone className="w-3.5 h-3.5 text-[#7C9885] shrink-0" />
@@ -51,7 +51,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ clinic, onBook
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex-1 min-h-[46px] flex items-center justify-center space-x-1.5 py-2.5 px-2 bg-[#25D366]/10 active:bg-[#25D366]/20 text-[#128C7E] border border-[#25D366]/30 rounded-xl text-[11px] xs:text-xs font-semibold tracking-wider uppercase transition-colors shrink-0"
+            className="flex-1 min-h-[46px] flex items-center justify-center space-x-1.5 py-2.5 px-2 bg-[#25D366]/10 active:bg-[#25D366]/20 text-[#128C7E] border border-[#25D366]/30 rounded-xl text-xs font-semibold tracking-wider uppercase transition-colors shrink-0"
             aria-label="Chat on WhatsApp"
           >
             <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" variant="green-badge" />
@@ -62,7 +62,7 @@ export const MobileStickyBar: React.FC<MobileStickyBarProps> = ({ clinic, onBook
         {/* Request Appointment Action */}
         <button
           onClick={onBookClick}
-          className="flex-[1.2] min-h-[46px] flex items-center justify-center space-x-1.5 py-2.5 px-2.5 bg-[#1A1A1A] active:bg-[#7C9885] text-white rounded-xl text-[11px] xs:text-xs font-semibold tracking-wider uppercase transition-colors shadow-xs cursor-pointer shrink-0"
+          className="flex-[1.2] min-h-[46px] flex items-center justify-center space-x-1.5 py-2.5 px-2.5 bg-[#1A1A1A] active:bg-[#7C9885] text-white rounded-xl text-xs font-semibold tracking-wider uppercase transition-colors shadow-xs cursor-pointer shrink-0"
           aria-label="Request an Appointment"
         >
           <Calendar className="w-3.5 h-3.5 text-[#7C9885] shrink-0" />

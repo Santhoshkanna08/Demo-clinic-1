@@ -463,10 +463,10 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
             
             {/* Direct Booking Channels */}
             <div className="bg-[#FAF9F7] rounded-3xl border border-[#E5E2DD] p-6 sm:p-7 space-y-4">
-              <h4 className="font-editorial text-xl text-[#1A1A1A] font-medium">
+              <h4 className="font-editorial text-xl sm:text-2xl text-[#1A1A1A] font-medium">
                 Prefer Direct Scheduling?
               </h4>
-              <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
+              <p className="text-sm text-[#5C5C5C] leading-relaxed">
                 Connect directly with clinic reception for immediate date inquiries or consultation questions.
               </p>
 
@@ -481,7 +481,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                     </div>
                     <div>
                       <p className="text-[10px] text-[#5C5C5C] uppercase tracking-wider font-semibold">Telephone Reception</p>
-                      <p className="text-xs font-semibold">{clinic.contact?.phone}</p>
+                      <p className="text-sm font-semibold">{clinic.contact?.phone}</p>
                     </div>
                   </a>
                 )}
@@ -498,7 +498,7 @@ export const AppointmentForm: React.FC<AppointmentFormProps> = ({ clinic, presel
                     </div>
                     <div>
                       <p className="text-[10px] text-[#5C5C5C] uppercase tracking-wider font-semibold">WhatsApp Desk</p>
-                      <p className="text-xs font-semibold">Message Reception</p>
+                      <p className="text-sm font-semibold">Message Reception</p>
                     </div>
                   </a>
                 )}

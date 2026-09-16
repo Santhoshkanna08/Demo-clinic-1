@@ -28,9 +28,9 @@ export const Hero: React.FC<HeroProps> = ({ clinic, onBookClick }) => {
           <div className="lg:col-span-7 flex flex-col justify-center space-y-5 sm:space-y-8 z-10">
             
             {/* Top Meta Badges: Specialty & Google Rating */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs">
               {clinic.specialty && (
-                <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white border border-[#E5E2DD] rounded-full text-[#5C5C5C] font-semibold tracking-wider uppercase text-[11px] sm:text-xs">
+                <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white border border-[#E5E2DD] rounded-full text-[#5C5C5C] font-semibold tracking-wider uppercase text-xs">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#7C9885]"></span>
                   <span>{clinic.specialty}</span>
                 </div>
@@ -41,7 +41,7 @@ export const Hero: React.FC<HeroProps> = ({ clinic, onBookClick }) => {
                   href={clinic.rating.googleReviewsUrl || '#reviews'}
                   target={clinic.rating.googleReviewsUrl ? '_blank' : '_self'}
                   rel="noreferrer"
-                  className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white border border-[#E5E2DD] hover:border-[#7C9885]/50 transition-colors rounded-full text-[#1A1A1A] font-medium text-[11px] sm:text-xs"
+                  className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white border border-[#E5E2DD] hover:border-[#7C9885]/50 transition-colors rounded-full text-[#1A1A1A] font-medium text-xs"
                 >
                   <div className="flex text-amber-500">
                     <Star className="w-3.5 h-3.5 fill-current" />
@@ -55,12 +55,12 @@ export const Hero: React.FC<HeroProps> = ({ clinic, onBookClick }) => {
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-3 sm:space-y-4">
-              <h1 className="font-editorial text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-[62px] leading-[1.14] text-[#1A1A1A] tracking-tight font-normal">
+            <div className="space-y-3.5 sm:space-y-4">
+              <h1 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-[62px] leading-[1.12] text-[#1A1A1A] tracking-tight font-normal">
                 {clinic.heroHeadline || clinic.name}
               </h1>
               
-              <p className="text-[#5C5C5C] text-sm sm:text-lg leading-relaxed max-w-xl font-normal">
+              <p className="text-[#5C5C5C] text-base sm:text-lg leading-relaxed max-w-xl font-normal">
                 {clinic.heroSubtext ||
                   `${clinic.name} provides consultant-led clinical dermatology and restorative therapies in a calm medical setting.`}
               </p>
@@ -88,11 +88,11 @@ export const Hero: React.FC<HeroProps> = ({ clinic, onBookClick }) => {
             </div>
 
             {/* Subtle Clinical Highlights Bar */}
-            <div className="pt-3 sm:pt-4 border-t border-[#E5E2DD]/80 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs text-[#5C5C5C]">
+            <div className="pt-3.5 sm:pt-4 border-t border-[#E5E2DD]/80 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-[#5C5C5C]">
               {clinic.doctor?.name && (
                 <div className="flex items-center space-x-2.5">
                   <div className="p-1.5 rounded-full bg-[#7C9885]/10 text-[#7C9885] shrink-0">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="truncate">
                     Consultant: <strong className="text-[#1A1A1A] font-medium">{clinic.doctor.name}</strong>
@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ clinic, onBookClick }) => {
               {clinic.contact?.address && (
                 <div className="flex items-center space-x-2.5">
                   <div className="p-1.5 rounded-full bg-[#7C9885]/10 text-[#7C9885] shrink-0">
-                    <MapPin className="w-3.5 h-3.5" />
+                    <MapPin className="w-4 h-4" />
                   </div>
                   <span className="truncate max-w-[280px]" title={clinic.contact.address}>
                     {clinic.contact.address.split(',')[0]}
@@ -192,8 +192,8 @@ export const Hero: React.FC<HeroProps> = ({ clinic, onBookClick }) => {
                     <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                   <div>
-                    <p className="text-[9px] sm:text-[10px] text-[#5C5C5C] uppercase tracking-wider font-semibold">Today's Clinic Hours</p>
-                    <p className="text-[11px] sm:text-xs font-semibold text-[#1A1A1A]">{firstOpeningHours}</p>
+                    <p className="text-[10px] text-[#5C5C5C] uppercase tracking-wider font-semibold">Today's Clinic Hours</p>
+                    <p className="text-xs font-semibold text-[#1A1A1A]">{firstOpeningHours}</p>
                   </div>
                 </div>
               )}

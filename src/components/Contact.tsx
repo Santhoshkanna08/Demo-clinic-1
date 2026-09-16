@@ -57,10 +57,10 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
                     <div className="w-10 h-10 rounded-xl bg-[#FAF9F7] text-[#7C9885] border border-[#E5E2DD] flex items-center justify-center mb-4">
                       <MapPin className="w-5 h-5" />
                     </div>
-                    <h3 className="font-editorial text-xl text-[#1A1A1A] font-medium mb-1.5">
+                    <h3 className="font-editorial text-xl sm:text-2xl text-[#1A1A1A] font-medium mb-1.5">
                       Clinic Address
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#5C5C5C] leading-relaxed">
+                    <p className="text-sm sm:text-base text-[#5C5C5C] leading-relaxed">
                       {contact.address}
                     </p>
                   </div>
@@ -88,15 +88,15 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
                     <div className="w-10 h-10 rounded-xl bg-[#FAF9F7] text-[#7C9885] border border-[#E5E2DD] flex items-center justify-center mb-4">
                       <Phone className="w-5 h-5" />
                     </div>
-                    <h3 className="font-editorial text-xl text-[#1A1A1A] font-medium mb-1.5">
+                    <h3 className="font-editorial text-xl sm:text-2xl text-[#1A1A1A] font-medium mb-1.5">
                       Direct Telephone
                     </h3>
-                    <p className="text-xs text-[#5C5C5C] mb-2">
+                    <p className="text-xs sm:text-sm text-[#5C5C5C] mb-2">
                       Reception & Enquiries:
                     </p>
                     <a
                       href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`}
-                      className="text-base font-semibold text-[#1A1A1A] hover:text-[#7C9885] transition-colors block"
+                      className="text-lg sm:text-xl font-semibold text-[#1A1A1A] hover:text-[#7C9885] transition-colors block"
                     >
                       {contact.phone}
                     </a>
@@ -124,20 +124,20 @@ export const Contact: React.FC<ContactProps> = ({ clinic }) => {
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="font-editorial text-xl text-[#1A1A1A] font-medium">
+                    <h3 className="font-editorial text-xl sm:text-2xl text-[#1A1A1A] font-medium">
                       Clinic Opening Hours
                     </h3>
-                    <p className="text-xs text-[#5C5C5C]">
+                    <p className="text-xs sm:text-sm text-[#5C5C5C]">
                       Consultations are arranged by advance appointment.
                     </p>
                   </div>
                 </div>
 
-                <div className="divide-y divide-[#E5E2DD] text-xs sm:text-sm">
+                <div className="divide-y divide-[#E5E2DD] text-sm sm:text-base">
                   {Object.entries(hours).map(([days, timeStr]) => (
                     <div key={days} className="py-2.5 flex justify-between items-center">
                       <span className="font-medium text-[#1A1A1A]">{days}</span>
-                      <span className="text-[#5C5C5C] font-mono text-xs">{timeStr}</span>
+                      <span className="text-[#5C5C5C] font-mono text-xs sm:text-sm">{timeStr}</span>
                     </div>
                   ))}
                 </div>

@@ -105,9 +105,9 @@ export const Services: React.FC<ServicesProps> = ({ clinic, onSelectService }) =
                         : 'bg-[#FAF9F7] text-[#7C9885] border border-[#E5E2DD]'
                     }`}
                   >
-                    <Icon className="w-3.5 h-3.5" />
+                    <Icon className="w-4 h-4" />
                   </div>
-                  <span className={`text-xs font-semibold whitespace-nowrap ${isSelected ? 'text-[#1A1A1A]' : 'text-[#5C5C5C]'}`}>
+                  <span className={`text-sm font-semibold whitespace-nowrap ${isSelected ? 'text-[#1A1A1A]' : 'text-[#5C5C5C]'}`}>
                     {service.name}
                   </span>
                 </button>
@@ -218,7 +218,7 @@ export const Services: React.FC<ServicesProps> = ({ clinic, onSelectService }) =
               </div>
 
               {/* Factual Description */}
-              <div className="space-y-4 text-[#5C5C5C] text-sm sm:text-base leading-relaxed mb-8">
+              <div className="space-y-4 text-[#5C5C5C] text-base leading-relaxed mb-8">
                 <p>{activeService.description}</p>
               </div>
 
@@ -230,8 +230,8 @@ export const Services: React.FC<ServicesProps> = ({ clinic, onSelectService }) =
                   </h5>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {activeService.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-start space-x-2 text-xs text-[#5C5C5C]">
-                        <Check className="w-3.5 h-3.5 text-[#7C9885] shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start space-x-2 text-sm text-[#5C5C5C]">
+                        <Check className="w-4 h-4 text-[#7C9885] shrink-0 mt-0.5" />
                         <span>{benefit}</span>
                       </div>
                     ))}
@@ -240,7 +240,7 @@ export const Services: React.FC<ServicesProps> = ({ clinic, onSelectService }) =
               )}
 
               {/* Doctor Consultation Disclaimer */}
-              <div className="p-4 rounded-xl bg-[#FAF9F7] border border-[#E5E2DD] text-xs text-[#5C5C5C] mb-8 leading-relaxed">
+              <div className="p-4 rounded-xl bg-[#FAF9F7] border border-[#E5E2DD] text-xs sm:text-sm text-[#5C5C5C] mb-8 leading-relaxed">
                 <p>
                   <strong>Clinical Note:</strong> Treatment suitability is determined through an individualized diagnostic consultation with {clinic.doctor?.name || 'our physician'}.
                 </p>

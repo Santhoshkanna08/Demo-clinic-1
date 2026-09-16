@@ -64,13 +64,13 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero')}
-            className="group flex flex-col focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#7C9885] rounded-sm py-1"
+            className="group flex flex-col focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[#7C9885] rounded-sm py-0.5"
           >
-            <span className="font-editorial text-xl xs:text-2xl sm:text-3xl font-semibold tracking-tight text-[#1A1A1A] group-hover:text-[#7C9885] transition-colors leading-tight">
+            <span className="font-editorial text-2xl sm:text-3xl font-semibold tracking-tight text-[#1A1A1A] group-hover:text-[#7C9885] transition-colors leading-tight">
               {clinic.name}
             </span>
             {clinic.type && (
-              <span className="text-[10px] sm:text-[11px] tracking-wider uppercase font-medium text-[#5C5C5C] hidden sm:block">
+              <span className="text-[11px] tracking-wider uppercase font-medium text-[#5C5C5C] hidden sm:block">
                 {clinic.type}
               </span>
             )}
@@ -116,7 +116,7 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
           <div className="flex items-center space-x-2 lg:hidden">
             <button
               onClick={onBookClick}
-              className="sm:hidden px-3 py-2 bg-[#1A1A1A] text-white text-xs font-medium tracking-wide rounded-full cursor-pointer active:bg-[#7C9885]"
+              className="sm:hidden px-3.5 py-2 bg-[#1A1A1A] text-white text-xs font-semibold tracking-wide rounded-full cursor-pointer active:bg-[#7C9885]"
             >
               Request
             </button>
@@ -142,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({ clinic, onBookClick }) => {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="text-base font-medium text-[#1A1A1A] hover:text-[#7C9885] py-3 px-2 border-b border-[#E5E2DD]/40 flex items-center justify-between min-h-[48px] active:bg-[#E5E2DD]/20 rounded-lg"
+                  className="text-lg font-medium text-[#1A1A1A] hover:text-[#7C9885] py-3 px-2 border-b border-[#E5E2DD]/40 flex items-center justify-between min-h-[48px] active:bg-[#E5E2DD]/20 rounded-lg"
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 text-[#7C9885]" />

@@ -70,10 +70,10 @@ export const Gallery: React.FC<GalleryProps> = ({ clinic }) => {
                     <span className="text-[10px] uppercase tracking-wider text-[#7C9885] font-semibold bg-white px-2 py-0.5 rounded-xs">
                       {item0.category}
                     </span>
-                    <h3 className="font-editorial text-lg sm:text-2xl font-medium text-white mt-1.5">
+                    <h3 className="font-editorial text-xl sm:text-2xl font-medium text-white mt-1.5">
                       {item0.title}
                     </h3>
-                    <p className="text-xs text-white/80 mt-0.5 line-clamp-1 hidden sm:block">{item0.alt}</p>
+                    <p className="text-xs sm:text-sm text-white/80 mt-0.5 line-clamp-1 hidden sm:block">{item0.alt}</p>
                   </div>
                   <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white shrink-0 ml-3">
                     <ZoomIn className="w-4 h-4" />
@@ -103,7 +103,7 @@ export const Gallery: React.FC<GalleryProps> = ({ clinic }) => {
                     <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7C9885] font-semibold bg-white px-1.5 py-0.5 rounded-xs">
                       {item1.category}
                     </span>
-                    <h3 className="font-editorial text-sm sm:text-lg font-medium text-white mt-1 line-clamp-1">
+                    <h3 className="font-editorial text-base sm:text-lg font-medium text-white mt-1 line-clamp-1">
                       {item1.title}
                     </h3>
                   </div>
@@ -135,7 +135,7 @@ export const Gallery: React.FC<GalleryProps> = ({ clinic }) => {
                     <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7C9885] font-semibold bg-white px-1.5 py-0.5 rounded-xs">
                       {item2.category}
                     </span>
-                    <h3 className="font-editorial text-sm sm:text-lg font-medium text-white mt-1 line-clamp-1">
+                    <h3 className="font-editorial text-base sm:text-lg font-medium text-white mt-1 line-clamp-1">
                       {item2.title}
                     </h3>
                   </div>
@@ -167,7 +167,7 @@ export const Gallery: React.FC<GalleryProps> = ({ clinic }) => {
                     <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7C9885] font-semibold bg-white px-1.5 py-0.5 rounded-xs">
                       {item3.category}
                     </span>
-                    <h3 className="font-editorial text-sm sm:text-lg font-medium text-white mt-1 line-clamp-1">
+                    <h3 className="font-editorial text-base sm:text-lg font-medium text-white mt-1 line-clamp-1">
                       {item3.title}
                     </h3>
                   </div>
@@ -199,10 +199,10 @@ export const Gallery: React.FC<GalleryProps> = ({ clinic }) => {
                     <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[#7C9885] font-semibold bg-white px-1.5 py-0.5 rounded-xs">
                       {item4.category}
                     </span>
-                    <h3 className="font-editorial text-sm sm:text-2xl font-medium text-white mt-1 line-clamp-1">
+                    <h3 className="font-editorial text-lg sm:text-2xl font-medium text-white mt-1 line-clamp-1">
                       {item4.title}
                     </h3>
-                    <p className="text-xs text-white/80 mt-1 line-clamp-1 hidden sm:block">{item4.alt}</p>
+                    <p className="text-xs sm:text-sm text-white/80 mt-1 line-clamp-1 hidden sm:block">{item4.alt}</p>
                   </div>
                   <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/20 backdrop-blur-xs flex items-center justify-center text-white shrink-0 ml-2">
                     <ZoomIn className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -248,13 +248,13 @@ export const Gallery: React.FC<GalleryProps> = ({ clinic }) => {
               {/* Caption */}
               <div className="p-4 sm:p-6 bg-[#1A1A1A] border-t border-white/10 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#7C9885] font-semibold">
+                  <span className="text-xs uppercase tracking-widest text-[#7C9885] font-semibold">
                     {lightboxImage.category}
                   </span>
-                  <h3 className="font-editorial text-lg sm:text-xl text-white font-medium mt-0.5">
+                  <h3 className="font-editorial text-xl sm:text-2xl text-white font-medium mt-0.5">
                     {lightboxImage.title}
                   </h3>
-                  <p className="text-xs text-white/60 mt-0.5 line-clamp-1">{lightboxImage.alt}</p>
+                  <p className="text-xs sm:text-sm text-white/70 mt-0.5 line-clamp-1">{lightboxImage.alt}</p>
                 </div>
                 <span className="text-xs text-white/40 hidden sm:inline">{clinic.name}</span>
               </div>
